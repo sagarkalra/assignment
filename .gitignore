@@ -1,0 +1,4 @@
+#!gitignore
+three/package-lock.json
+three/node_modules
+.vscode/
