@@ -4,16 +4,21 @@ let app = {
     init: function() {
         let dropArea = document.getElementById('upload-area');
 
+        // Event to handle default behaviour
         dropArea.addEventListener('dragenter', this.handleUpload, false);
         dropArea.addEventListener('dragleave', this.handleUpload, false);
         dropArea.addEventListener('dragover', this.handleUpload, false);
+
+        // Event to handle image display by dropping from files
         dropArea.addEventListener('drop', this.handleDrop, false);
     
+        // Event to clear image
         document.getElementById('clear').addEventListener('click', function() {
             document.getElementById('preview').innerHTML = '';
             document.getElementById('file-link').value = '';
         });
     
+        // Event to show image from link
         document.getElementById('file-show').addEventListener('click', function() {
             document.getElementById('preview').innerHTML = '';
             let link = document.getElementById('file-link').value;
